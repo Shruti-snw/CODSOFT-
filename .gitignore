@@ -1,32 +1,43 @@
-# Prerequisites
-*.d
+//Simple calc
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main() {
+    double num1, num2;
+    char operation;
+    
+    // Input numbers
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter second number: ";
+    cin >> num2;
 
-# Precompiled Headers
-*.gch
-*.pch
+    // Choose operation
+    cout << "Choose an operation (+, -, *, /): ";
+    cin >> operation;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    // Perform calculation based on chosen operation
+    switch (operation) {
+        case '+':
+            cout << "Result: " << num1 + num2 << endl;
+            break;
+        case '-':
+            cout << "Result: " << num1 - num2 << endl;
+            break;
+        case '*':
+            cout << "Result: " << num1 * num2 << endl;
+            break;
+        case '/':
+            if (num2 != 0) {
+                cout << "Result: " << num1 / num2 << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed." << endl;
+            }
+            break;
+        default:
+            cout << "Invalid operation selected." << endl;
+            break;
+    }
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
